@@ -1,14 +1,3 @@
----
-summary: Integrating Gitleaks into GitHub Workflow or Azure Pipeline
-authors:
-  - Dariusz Porowski
-date: 2022-08-12
-tags:
-  - Gitleaks
-  - Secrets Detection
-  - Secrets Scanning
----
-
 # Gitleaks
 
 ## Overview
