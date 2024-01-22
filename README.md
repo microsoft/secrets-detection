@@ -1,16 +1,12 @@
 # Secrets Detection
 
-## Overview
-
-Application and infrastructure source codes contain exposed secrets that can pose a severe security risk and requires attention during development. Utilizing robust **Secret Detection** tools help mitigate this risk by probabilistically identifying whether strings in application code contain secrets. Early and automated detection of secrets in IaC and application code is critical and ideally should occur before code is committed to a repository and part of its history. Effective secret detection tools share several essential characteristics.
+Application and infrastructure source codes may contain exposed secrets that can pose a severe security risk and requires attention during development. Utilizing robust **secret detection** tools help mitigate this risk by probabilistically identifying whether strings in application code contain secrets. Early and automated detection of secrets in IaC and application code is critical and ideally should occur before code is committed to a repository and part of its history. Effective secret detection tools share several essential characteristics.
 
 ## Characteristics of effective Secret Detection Tools
 
-| Characteristic   | Description                                                                                                                                                                                                    |
-|------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Precision**    | The tool rarely produces false positive results. False positive results directly impact the level of trust that developers have for the tool.                                                                  |
-| **Recall**       | The tool rarely misses a secret. This reduces runtime and operational remediation.                                                                                                                             |
-| **Configurable** | False positives can be addressed in the code through annotation and does not slow developers down. Additionally, new patterns can be introduced to detect custom secrets not previously detectable to the tool |
+- **Precision**: An effective secrets detection tool rarely produces false positive results. False positive results directly impact the level of trust that developers have for the tool.
+- **Recall**: The tool rarely misses a secret. This reduces runtime and operational remediation.
+- **Configurable**: False positives can be addressed in the code through annotation and does not slow developers down. Additionally, new patterns can be introduced to detect custom secrets not previously detectable to the tool
 
 ## Sample sequence - Early detection
 
@@ -47,7 +43,7 @@ sequenceDiagram
 
 It is important to act on the results of the scan immediately.
 
-1. Triage the output from the scans to identify false positives and false negatives.
+1. Triage the output from the scans to identify false positives and updated the configuration to avoid future occurances.
 1. It is recommended that results determined as true secrets be marked as high-severity bugs/issues which must be remediated with urgency.
 1. Document and track the remaining issues.
 1. Secret rotation is a compulsory step once a secret has been exposed.
