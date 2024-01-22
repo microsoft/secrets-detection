@@ -33,8 +33,6 @@ Gitleaks result (SARIF file) may be uploaded to the [GitHub Code Scanning](https
 >
 > **GitHub Code Scanning** integration it's only available for Organizations that use [GitHub Enterprise Cloud](https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-enterprise) and have a license for [GitHub Advanced Security](https://docs.github.com/en/get-started/learning-about-github/about-github-advanced-security).
 
-{% raw %}
-
 ```yaml
 name: Gitleaks-GHA-official
 
@@ -71,8 +69,6 @@ jobs:
           category: gitleaks
 ```
 
-{% endraw %}
-
 To adjust **Gitleaks Action** configuration, follow documentation: <https://github.com/marketplace/actions/gitleaks#environment-variables>
 
 ### Option 2 - Gitleaks with unofficial GitHub Action
@@ -86,8 +82,6 @@ Each Action has a different approach for Gitleaks usage and scanning, so there i
 > Very often, unofficial Actions are community-powered and may have undefined code maintenance and support approaches.
 
 One community-based GitHub Action has been selected for this example, which has similar results and experience as the official one - [Gitleaks Scanner Action](https://github.com/marketplace/actions/gitleaks-scanner).
-
-{% raw %}
 
 ```yaml
 name: Gitleaks-GHA-unofficial
@@ -132,8 +126,6 @@ jobs:
           category: gitleaks
 ```
 
-{% endraw %}
-
 To adjust **Gitleaks Scanner Action** configuration, follow documentation: <https://github.com/marketplace/actions/gitleaks-scanner#inputs>
 
 ### Option 3 - Gitleaks as command line
@@ -141,8 +133,6 @@ To adjust **Gitleaks Scanner Action** configuration, follow documentation: <http
 You can run Gitleaks natively as a command line without using any GitHub Actions. In this scenario, you have complete control, but you are responsible for code maintenance based on Gitleaks breaking changes in future releases. Moreover, you have to setup Gitleaks on the agent as well.
 
 The following example contains the setup step that downloads and installs the latest version of the Gitleaks from the official repository and the step with Gitleaks execution to detect secrets in the code.
-
-{% raw %}
 
 ```yaml
 name: Gitleaks-CMD
@@ -225,8 +215,6 @@ jobs:
           category: gitleaks
 ```
 
-{% endraw %}
-
 To adjust **Gitleaks** configuration, follow documentation: <https://github.com/zricethezav/gitleaks#usage>
 
 ### GitHub References
@@ -254,8 +242,6 @@ Currently, there is only one Azure Pipelines extension for Gitleaks under [Visua
 
 Task automatically uploads SARIF report to Pipeline Artifacts, and the result can be visualized using the [SARIF SAST Scans Tab](https://marketplace.visualstudio.com/items?itemName=sariftools.scans) extension.
 
-{% raw %}
-
 ```yaml
 trigger:
 - main
@@ -278,15 +264,11 @@ steps:
     verbose: true
 ```
 
-{% endraw %}
-
 ### Option 2 - Gitleaks as command line
 
 You can run Gitleaks natively as a command line without using any Azure Pipelines extension. In this scenario, you have complete control, but you are responsible for code maintenance based on Gitleaks breaking changes in future releases. Moreover, you have to setup Gitleaks on the agent as well.
 
 The following example contains the setup step that downloads and installs the latest version of the Gitleaks from the official repository and the step with Gitleaks execution to detect secrets in the code.
-
-{% raw %}
 
 ```yaml
 trigger:
@@ -358,8 +340,6 @@ steps:
     artifact: CodeAnalysisLogs
     publishLocation: pipeline
 ```
-
-{% endraw %}
 
 ### Azure DevOps References
 
