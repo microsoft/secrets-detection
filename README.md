@@ -47,7 +47,7 @@ sequenceDiagram
 
 It is important to act on the results of the scan immediately.
 
-1. Triage the output from the scans to identify false positives and false negatives.
+1. Triage the output from the scans to identify false positives and updated the configuration to avoid future occurances.
 1. It is recommended that results determined as true secrets be marked as high-severity bugs/issues which must be remediated with urgency.
 1. Document and track the remaining issues.
 1. Secret rotation is a compulsory step once a secret has been exposed.
